@@ -1,0 +1,109 @@
+set nu
+set ic
+set hlsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
+hi Comment ctermfg=darkcyan
+
+hi StatusLine ctermbg=black ctermfg=DarkGreen guisp=Magenta guibg=Red
+
+"hi TabLineFill ctermfg=LightBlue ctermbg=LightBlue
+"hi TabLine cterm=bold ctermfg=Black ctermbg=white
+"hi TabLineSel ctermfg=White ctermbg=black
+
+"cursor line + cursor color
+set cursorline
+highlight CursorLine          guibg=#003853 ctermbg=8  gui=none cterm=none
+"set t_Co=256          " 256 color mode
+
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+"e=tabe
+"ca e tabe
+
+"map > gt
+"map < gT
+
+"fzf
+"set rtp+=~/.fzf
+
+"NERDTree
+map <C-n> :NERDTreeToggle<CR>
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:buffergator") ) | q | endif
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+"nnoremap <silent> <c-e> :BufExplorerHorizontalSplit<CR>
+"nnoremap <silent> <c-e> :BufExplorer<CR>
+"nnoremap <silent> <c-m> :CtrlPMixed<CR>
+nnoremap <silent> <c-h> :BuffergatorOpen<CR>
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+
+let g:airline_theme='bubblegum'
+
+
+"change c-t and enter, enter key will open buffer in tab
+"let g:ctrlp_prompt_mappings = {
+"    \ 'AcceptSelection("e")': ['<c-t>'],
+"    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+"    \ }
+"
+
+
+augroup reload_vimrc " {
+        autocmd!
+            autocmd BufWritePost $MYVIMRC source $MYVIMRC
+        augroup END " }
+
+
+
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+"
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+"
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+nnoremap <expr> zz 'zt' . winheight(0)/6 . '<c-y>'
+
+
+"ycm
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/python/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+
+"buffergator
+let g:buffergator_autodismiss_on_select = 0
+let g:buffergator_autoupdate = 1
+let g:buffergator_sort_regime = 'mru'
+
+"diminactive
+"let g:diminactive_use_colorcolumn = 0
+let g:diminactive_use_syntax = 1
+"let g:diminactive_enable_focus = 1
+hi ColorColumn ctermbg=8 guibg=#eee8d5
+autocmd VimEnter * DimInactive
+"autocmd VimEnter * BuffergatorOpen
+
+
