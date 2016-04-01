@@ -84,4 +84,7 @@ nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
 
+"gVim
+"colorscheme desert
+"set guifont=courier_new:h11
 
