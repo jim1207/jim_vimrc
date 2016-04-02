@@ -1,0 +1,6 @@
+
+screen -t general
+screen -t build
+stuff "cd /wk/8084/build/20151117; source ./env.sh"
+screen -t source
+stuff "cd /wk/8084/build/20151117"
