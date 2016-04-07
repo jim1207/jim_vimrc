@@ -1,3 +1,4 @@
+screen -t free-use
 screen -t editor
-screen -t general
+screen -t build
 
