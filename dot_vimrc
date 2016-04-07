@@ -5,6 +5,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set hidden
+set noswapfile
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 hi Comment ctermfg=darkcyan
 
