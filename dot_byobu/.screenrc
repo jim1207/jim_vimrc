@@ -1,6 +1,5 @@
+screen -t AA
+#termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+#ttus "screen ^E (^Et) | $USER@^EH"
+#hardstatus off
 
-screen -t general
-screen -t build
-stuff "cd /wk/8084/build/20151117; source ./env.sh"
-screen -t source
-stuff "cd /wk/8084/build/20151117"

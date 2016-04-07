@@ -5,7 +5,7 @@
 #
 #    Copyright (C) 2008 Canonical Ltd.
 #
-#    Authors: Dustin Kirkland <kirkland@ubuntu.com>
+#    Authors: Dustin Kirkland <kirkland@byobu.co>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -44,15 +44,15 @@ backtick 1002 	127	127		byobu-status screen_upper_right
 backtick 1003 	599	599		byobu-status screen_lower_left
 backtick 1004 	2	2		byobu-status screen_lower_right
 
-#hardstatus alwayslastline
-#hardstatus alwaysignore
 hardstatus firstline
 
 # The following line would turn off alternate Screen switching in xterms,
-# so that text in Screen will go into the xterm's scrollback buffer.
-# However, we are disabling this at this point, since byobu's
-# alt-pgup and alt-pgdn keybindings now exist.
-#termcapinfo xterm* ti@:te@
+# so that text in Screen will go into the xterm's scrollback buffer
+# and user's can press shift-pgup/shift-pgdn.
+# However, alt-pgup and alt-pgdn keybindings are far more accurate,
+# and handle per session/window/split scrollback correctly
+termcapinfo xterm* ti@:te@
+
 altscreen on
 
 # Enable 256 color terminal
@@ -75,32 +75,15 @@ activity ""
 fit
 
 # Empty shell title by default, maximizes number of windows we can fit, F8 renames easily
-shelltitle ""
+shelltitle "new"
 
 # Maintain SSH_AUTH_SOCK link
 setenv SSH_AUTH_SOCK $BYOBU_CONFIG_DIR/.ssh-agent
 
-#0 or k     Black
-#1 or r      Red
-#2 or g     Green
-#3 or y     Brown / yellow
-#4 or b     Blue
-#5          Purple
-#6 or c     Cyan
-#7 or w    White
-#m           magenta
-
 # Window tabs, second to last line
-#caption always "%1001`%?%-Lw%50L>%?%{=r}%n*%f %t%?(%u)%?%{-}%12`%?%+Lw%?%11` %=%12`%1002`%10`%<"
-#caption always "%{= wk} %{= KY} [%n]%t @ %H %{-} %= %{= KR} %l %{-} | %{= KG} %Y-%m-%d %{-} "
-#caption always "%{= Wk}%-w%{= KY}[%n]%t %{-}%+w %= %{= KR}%{-}|%{= KG} %Y-%m-%d %{-} "
-#caption always "%{= Rk}%-w%{= bW}[%n] %t %{-}%+w %-= |%{= KG} %c | %Y-%m-%d"
 caption alwaysignore
 
 # Status string, last line
-#hardstatus string '%12`%1003`%=%1004`'
-#hardstatus string " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
-#hardstatus string "%{.kW}%-w%{.W}%n %t%{-}%{=b kw}%?%+w%? %=%c %d/%m/%Y" #B&W & date&time
 hardstatus string "%{= Gk}%-w%{= Wk}[%n] %t %{-}%+w %-= |%{= KG} %c | %Y-%m-%d"
 
 # NOTE: Older version of Screen have an arbitrary limit of only being able
@@ -112,4 +95,3 @@ hardstatus string "%{= Gk}%-w%{= Wk}[%n] %t %{-}%+w %-= |%{= KG} %c | %Y-%m-%d"
 
 source $BYOBU_CONFIG_DIR/keybindings
 
-termcapinfo xterm* ti@:te@

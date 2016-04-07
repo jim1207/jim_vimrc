@@ -1,0 +1,9 @@
+
+byobu
+wget https://launchpad.net/byobu/trunk/5.104/+download/byobu_5.104.orig.tar.gz
+untar, make, make install
+
+screen
+yum install -y gcc ncurses-devel
+wget http://ftp.gnu.org/gnu/screen/screen-4.3.1.tar.gz
+untar, make, make install
