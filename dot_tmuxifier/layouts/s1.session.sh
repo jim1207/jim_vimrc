@@ -11,15 +11,16 @@ if initialize_session "s1"; then
 
   # Create a new window inline within session layout definition.
   new_window "vim"
+  run_cmd "cd /opt/Transcoder3"
 
   # Load a defined window layout.
-  load_window "w1"
+  load_window "w2t"
 
   # Load a defined window layout.
   load_window "w3"
 
   # Select the default active window on session creation.
-  select_window 0
+  select_window 2
 
 fi
 
