@@ -6,6 +6,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
+alias tms='tmuxifier s s1'
+alias tmsk='tmux kill-session -t s1'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
