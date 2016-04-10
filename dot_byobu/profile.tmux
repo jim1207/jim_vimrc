@@ -25,6 +25,7 @@ set-environment -g BYOBU_BACKEND tmux
 new-session -d byobu-janitor
 set -s escape-time 0
 
+BYOBU_PREFIX=/usr/local #Jim
 # Change to Screen's ctrl-a escape sequence and use screen-like keys
 source $BYOBU_PREFIX/share/byobu/keybindings/tmux-screen-keys.conf
 

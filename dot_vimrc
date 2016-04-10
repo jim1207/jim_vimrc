@@ -35,7 +35,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "nnoremap <silent> <c-e> :BufExplorerHorizontalSplit<CR>
 "nnoremap <silent> <c-e> :BufExplorer<CR>
 "nnoremap <silent> <c-m> :CtrlPMixed<CR>
-nnoremap <silent> <c-m> :BuffergatorOpen<CR>
+nnoremap <silent> <c-h> :BuffergatorOpen<CR>
 nnoremap <silent> <c-n> :bn<CR>
 nnoremap <silent> <c-l> :b#<CR>
 

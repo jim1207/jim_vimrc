@@ -15,8 +15,4 @@ rm -rf byobu_src
 #tmux
 yum install -y tmux
 
-#tmuxifier
-git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
-echo 'export PATH="$HOME/.tmuxifier/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(tmuxifier init -)"' >> ~/.profile
 
