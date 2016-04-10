@@ -15,10 +15,13 @@ if initialize_session "s1"; then
   # Load a defined window layout.
   load_window "w1"
 
+  # Load a defined window layout.
+  load_window "w3"
+
   # Select the default active window on session creation.
-  #select_window 1
+  select_window 0
 
 fi
 
 # Finalize session creation and switch/attach to it.
-finalize_and_go_to_session
+finalize_and_go_to_session 
