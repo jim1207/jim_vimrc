@@ -6,8 +6,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias vi='vim'
-alias tms='tmuxifier s s1'
-alias tmsk='tmux kill-session -t s1'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -20,4 +18,18 @@ export TERM="xterm-256color"
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+function tmx() {
+    case "$1" in
+        1)
+            tmuxifier s s1
+        ;;
+        end)
+            tmux display-message -p '#S' | xargs tmux kill-session -t
+        ;;
+        clean)
+            tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+        ;;
+    esac
+}
 
