@@ -8,3 +8,5 @@ unbind C-o
 unbind o
 bind -r o select-pane -t :.+ \; display-pane
 
+bind l send-keys -R\; clear-history\; display "Cleared"\
+
