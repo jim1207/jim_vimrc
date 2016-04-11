@@ -58,15 +58,15 @@ set-option -g status-position top
 set-option -g mouse-select-pane on
 
 set-window-option -g window-status-attr default
-set-window-option -g window-status-bg green #non-focused title bg
+set-window-option -g window-status-bg  colour247 #non-focused title bg
 set-window-option -g window-status-fg black #non-focused title fg
 set-window-option -g window-status-current-attr reverse
 set-window-option -g window-status-current-bg black #focused title fg
-set-window-option -g window-status-current-fg red
+set-window-option -g window-status-current-fg colour74
 #set-window-option -g window-status-alert-bg $BYOBU_DARK
 #set-window-option -g window-status-alert-fg $BYOBU_LIGHT
 #set-window-option -g window-status-alert-attr bold
-set-window-option -g window-status-activity-bg green
+set-window-option -g window-status-activity-bg colour247
 set-window-option -g window-status-activity-fg black
 set-window-option -g window-status-activity-attr bold
 set-window-option -g automatic-rename on
@@ -76,7 +76,7 @@ set-window-option -g monitor-activity on
 # Cannot use:
 #  - screen-bce, screen-256color-bce: tmux does not support bce
 #  - screen-256color: vim broken without -bce
-set -g default-terminal "screen"
+set -g default-terminal "screen-256color"
 
 # The following helps with Shift-PageUp/Shift-PageDown
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
@@ -85,7 +85,7 @@ set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 # BUG: Should *not* hardcode /bin/bash here
 set -g default-command $SHELL
 
-set -g status-bg green #status bar bg
+set -g status-bg colour247 #status bar bg
 set -g status-fg black #status bar fg
 set -g status-interval 1
 set -g status-left-length 256
