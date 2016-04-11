@@ -7,11 +7,14 @@
 if initialize_session "s1"; then
 
   # Create a new window inline within session layout definition.
-  new_window "free-use"
+  new_window 
+
+  new_window
+  run_cmd "cd /opt/Transcoder3"
 
   # Create a new window inline within session layout definition.
   new_window "vim"
-  run_cmd "cd /opt/Transcoder3"
+  run_cmd "cd /opt/Transcoder3; vim"
 
   # Load a defined window layout.
   load_window "w2t"

@@ -42,7 +42,8 @@ nnoremap <silent> <c-l> :b#<CR>
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_open_multiple_files = 'i'
-let g:ctrlp_cmd = 'CtrlPMixed'
+"let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 let g:airline_theme='bubblegum'
 
@@ -87,4 +88,5 @@ au BufWinEnter *.* silent loadview
 "gVim
 "colorscheme desert
 "set guifont=courier_new:h11
+
 

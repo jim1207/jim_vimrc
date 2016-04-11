@@ -21,7 +21,7 @@ split_v 50
 
 # Set active pane.
 select_pane 0
-run_cmd "cd $WKDIR/container_xboth/log"
+run_cmd "cd $WKDIR/container_xboth/log/nginx"
 select_pane 1
 run_cmd "cd $WKDIR/container_xboth/out"
 select_pane 2
