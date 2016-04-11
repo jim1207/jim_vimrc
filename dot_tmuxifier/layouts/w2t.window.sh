@@ -8,7 +8,7 @@ WKDIR=/opt/Transcoder3
 new_window "w2t"
 
 # Split window into panes.
-split_h 50
+split_h 40
 split_v 50
 
 # Run commands.
