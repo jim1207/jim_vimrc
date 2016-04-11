@@ -1,0 +1,16 @@
+
+export TERM="xterm-256color"
+function tmx() {
+    case "$1" in
+        [1-9])
+            tmuxifier s s$1
+        ;;
+        end)
+            tmux display-message -p '#S' | xargs tmux kill-session -t
+        ;;
+        clean)
+            tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+        ;;
+    esac
+}
+
