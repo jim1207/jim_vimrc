@@ -89,8 +89,8 @@ au BufWinEnter *.* silent loadview
 "colorscheme desert
 "set guifont=courier_new:h11
 
-autocmd VimEnter * BuffergatorOpen
-autocmd VimEnter * wincmd w
+"autocmd VimEnter * BuffergatorOpen
+"autocmd VimEnter * wincmd w
 
 
 
